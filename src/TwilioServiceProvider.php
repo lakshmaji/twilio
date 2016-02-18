@@ -2,6 +2,14 @@
 
 use Illuminate\Support\ServiceProvider;
 
+/**
+ * Twilio - ServicePrivider to support integration with Laravel framework 
+ *
+ * @package  Twilio
+ * @version  1.0.0
+ * @author   lakshmaji 
+ */ 
+
 class TwilioServiceProvider extends ServiceProvider
 {
     /**
@@ -26,3 +34,6 @@ class TwilioServiceProvider extends ServiceProvider
         });
     }
 }
+// end of TwilioServiceProvider class
+// end of file TwilioServiceProvider 
+
