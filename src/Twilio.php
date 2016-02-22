@@ -3,7 +3,10 @@
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Exception;
 require('Services/Twilio.php');
+
+
 
 
 /**
@@ -115,11 +118,15 @@ class Twilio
                     );
 
         $client  = new \Services_Twilio($this->auth_id, $this->auth_token); 
-
-        $message = $client->account->messages->create($params);
-
-	    echo $message->status;
-        
+        try{
+            $message = $client->account->messages->create($params);
+            return $message->status;
+        }
+        catch(Exception $smsException)
+        {
+            return false;
+        }
+                
     }
 }
 //end of Twilio class
