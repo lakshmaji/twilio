@@ -168,7 +168,6 @@ class Twilio
      */
     public function sendSMS($userData,$optionalMessage = "You got a message form Ananth ",$sms_type = "SMS") 
     {
-        // place twilio credentials here
         $source_mobile = env('TWILIO_SOURCE_NUMBER');
         $auth_id       = env('TWILIO_AUTH_ID');
         $auth_secret   = env('TWILIO_AUTH_SECRET');
