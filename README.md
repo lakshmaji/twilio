@@ -40,7 +40,7 @@ Again do composer update
 ***
 
 #METHOD 1:
->##SENDING SMS
+>###Sending SMS
 
 ```php
 
@@ -50,7 +50,7 @@ Twilio::sendMessageTwilio($auth_id,$auth_token);
 
 ```
 
->##MISCELLANEOUS
+>###Miscellaneous
 
 ```php
 
@@ -66,7 +66,7 @@ Twilio::sendMessageTwilio($auth_id,$auth_token);
 ```
 
 
->##EXAMPLE CODE FOR Laravel
+>###Example code for Laravel
 
 ```php
 
@@ -92,8 +92,9 @@ class TwilioClass extends Controller
 ***
 
 
+
 #METHOD 2:
->##(Secure way) 
+>###Manage Twilio creadential at one safe place 
 Keep Twilio credentials in Laravel .env file as follows
 
 ```php
@@ -130,7 +131,7 @@ NOTE :
 
 ```
 
->##EXAMPLE USAGE
+>###Example Usage
 
 ##Sending OTP
 
@@ -181,20 +182,22 @@ class SendSmsTwilio extends Controller
 ```
 
 *** 
+***
+
+
+
 
 >## TWILIO TRAIL ACCOUNT USAGE:
 
  - If You are trying to implement SMS functionality with Twilio the you need to verify the list of destination mobile numbers at [Twilio](https://www.twilio.com/user/account/phone-numbers/verified)
- - ![VERIFIED NUMBERS](https://raw.githubusercontent.com/lakshmajim/images/master/verified_numbers.png)
+![VERIFIED NUMBERS](https://raw.githubusercontent.com/lakshmajim/images/master/verified_numbers.png)
  - Before sending MESSAGE make sure that you have enabled **GEO-PERMISSIONS** at [Twilio](https://www.twilio.com/user/account/settings/international)
- - ![GEO PERMISSIONS](https://raw.githubusercontent.com/lakshmajim/images/master/geo_permissions.png)
+![GEO PERMISSIONS](https://raw.githubusercontent.com/lakshmajim/images/master/geo_permissions.png)
 
 ***
 
->##LICENSE
+>##Licence
 
 [*MIT License (MIT)*](https://opensource.org/licenses/MIT)
 
->##AUTHOR 
-
-MUTYALA ANANTHA LAKSHMAJI
+@ MUTYALA ANANTHA LAKSHMAJI
