@@ -19,6 +19,7 @@
 Run this command from the Terminal:
 
 ```bash
+    composer require lakshmajim/twilio
     composer dumpautoload
     composer update
 ```
