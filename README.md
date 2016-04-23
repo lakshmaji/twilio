@@ -8,6 +8,7 @@
   - after registrion click on Account ,there you will be able to see authsid and authtoken. 
   - You have assigned a sender mobile number which can be found at [Twilio](https://www.twilio.com/user/account/phone-numbers/incoming),which is used to send Text Messages or MMS and ShortCodes etc.
 
+***
 
 >##INSTALLATION
 
@@ -22,6 +23,8 @@ Run this command from the Terminal:
     composer update
 ```
 
+***
+
 >##Laravel INTEGRATION
 
 you need to add the service provider. Open `app/config/app.php`, and add a new item to the providers array.
@@ -33,6 +36,8 @@ Then, add a Facade for more convenient usage. In `app/config/app.php` add the fo
   'Twilio'    => Lakshmajim\Twilio\Facade\Twilio::class,
 ```
 Again do composer update
+
+***
 
 #METHOD 1:
 >##SENDING SMS
@@ -84,8 +89,12 @@ class TwilioClass extends Controller
 
 ```
 
+***
+
+
 #METHOD 2:
->##(Secure way) Keep Twilio credentials in Laravel .env file as follows
+>##(Secure way) 
+Keep Twilio credentials in Laravel .env file as follows
 
 ```php
 
@@ -171,33 +180,16 @@ class SendSmsTwilio extends Controller
 
 ```
 
+*** 
+
 >## TWILIO TRAIL ACCOUNT USAGE:
 
  - If You are trying to implement SMS functionality with Twilio the you need to verify the list of destination mobile numbers at [Twilio](https://www.twilio.com/user/account/phone-numbers/verified)
  - Before sending MESSAGE make sure that you have enabled **GEO-PERMISSIONS** at [Twilio](https://www.twilio.com/user/account/settings/international)
 
+***
 
 >##LICENSE
 
-The *MIT License (MIT)*
-
-Copyright (c) 2015 Twilio 
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+The [*MIT License (MIT)*](https://opensource.org/licenses/MIT)
 
