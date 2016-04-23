@@ -185,9 +185,9 @@ class SendSmsTwilio extends Controller
 >## TWILIO TRAIL ACCOUNT USAGE:
 
  - If You are trying to implement SMS functionality with Twilio the you need to verify the list of destination mobile numbers at [Twilio](https://www.twilio.com/user/account/phone-numbers/verified)
- - [![VERIFIED NUMBERS](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)]
+ - ![VERIFIED NUMBERS](https://raw.githubusercontent.com/lakshmajim/images/master/verified_numbers.png)
  - Before sending MESSAGE make sure that you have enabled **GEO-PERMISSIONS** at [Twilio](https://www.twilio.com/user/account/settings/international)
- - [![GEO PERMISSIONS](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)]
+ - ![GEO PERMISSIONS](https://raw.githubusercontent.com/lakshmajim/images/master/geo_permissions.png)
 
 ***
 
@@ -195,4 +195,6 @@ class SendSmsTwilio extends Controller
 
 [*MIT License (MIT)*](https://opensource.org/licenses/MIT)
 
->##AUTHOR MUTYALA ANANTHA LAKSHMAJI
+>##AUTHOR 
+
+MUTYALA ANANTHA LAKSHMAJI
