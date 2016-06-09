@@ -1,4 +1,4 @@
-# Laravel - Twilio
+han# Laravel - Twilio
 [Wiki on web](http://lakshmajim.github.io/plivo/)
 
 >##WHAT IT IS?
@@ -241,7 +241,7 @@ class TwilioTest extends Controller
 |16003|Un handled error|
 
 ***
->###> Handling Exceptions
+>### Handling Exceptions
 
 ```php
 <?php
