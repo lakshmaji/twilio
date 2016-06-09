@@ -6,6 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Lakshmajim\\Twilio\\Middleware\\' => array($baseDir . '/src/Middleware'),
     'Lakshmajim\\Twilio\\' => array($baseDir . '/src'),
 );
