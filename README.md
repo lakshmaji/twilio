@@ -47,143 +47,255 @@ Again do composer update
 ```php
 
 <?php
-use Twilio;
-Twilio::sendMessageTwilio($auth_id,$auth_token);
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+use Twilio; 
+
+
+/**
+ * Twilio - Package usage Example
+ *
+ * @access  public
+ * @since   1.2.0
+ * @author  lakshmaji 
+ */
+class TwilioTest extends Controller
+{
+  public function testMesssage()
+  {
+
+    // initialize message array 
+    $message_array = array(
+        'sender_id'     => 'TWILIO_AUTH_ID',
+        'sender_secret' => 'TWILIO_AUTH_SECRET',
+        'reciver_mobile' => '999999999',
+        'media_url' => 'http://goo.gl/F9igRq',
+        'otp'     =>'325565',
+        'sender' => 'TWILIO_SOURCE_NUMBER'
+    );
+
+
+    // This will send message only
+    $sms_response = Twilio::message($message_array,$op="only msg", true,  false, false ); 
+
+    return response()->json($sms_response,200);
+  }
+
+}
+// end of class TwilioTest
+// end of file TwilioTest.php
 
 ```
 
->###Miscellaneous
+>###message(array, string, boolean, boolean, boolean)
+
 
 ```php
 
-<?php
-  Use Twilio;
-  //setting source mobile number
-  Twilio::setSourceMobile("918888888888");
-  //setting destination mobile number
-  Twilio::setDestinationMobile("919999999999");
-  //setting text message
-  Twilio::setMessageTwilio("Your text message or otp here");
+    $message_array = array(
+        'sender_id'     => 'TWILIO_AUTH_SID',
+        'sender_secret' => 'TWILIO_AUTH_SECRET',
+        'reciver_mobile' => 'MOBILE_NUMBER',
+        'media_url' => 'MEDIA_URL',
+        'otp'     =>'OTP',
+        'sender' => 'TWILIO_SOURCE_NUMBER'
+    );
   
 ```
 
+The message_array contains follwing parameters 
 
->###Example code for Laravel
+| PARAMETER           | DESCRIPTION                             |
+|:-------------- |:----------------------------------------| 
+|sender_id   | This is the key defined in ".env" file for auth_sid                | 
+|sender_secret| This is the key defined in ".env" file for auth_secret                  |
+|  sender         | This is the key defined in .env file for sender mobile number  |
+|reciver_mobile| This is the receivers mobile number|
+|media_url|This is the "uri" for mutimedia|
+|otp|This key values associates with the otp|
+     
+ 
+        
 
-```php
+      
+             
 
-<?php namespace App\Http\Controllers;
 
-use Illuminate\Routing\Controller as BaseController;
-use Twilio;
+>###Example code for Laravel along with sample .env file
 
-class TwilioClass extends Controller
-{
-  public function sendSMS()
-  {
-    $src       = Twilio::setSourceMobile("+XXXXXXXXXX");
-    $dest      = Twilio::setDestinationMobile("+XXXXXXXXXX");
-    $txt       = Twilio::setMessageTwilio("lakshmaji - Testing from package");
-    $smsObject = Twilio::sendMessageTwilio('<AUTH_SID>','AUTH_TOKEN');
-    echo $smsObject;         //diaplay final message response
-  }
-}
+**.env file**
+```erlang
+
+APP_ENV=local
+APP_DEBUG=true
+APP_KEY=BPfhzoGJ7RJB8D3qoyP6KZ2MjX2MAzcN
+
+DB_HOST=127.0.0.1
+DB_DATABASE=homestead
+DB_USERNAME=homestead
+DB_PASSWORD=secret
+
+CACHE_DRIVER=file
+SESSION_DRIVER=file
+QUEUE_DRIVER=sync
+
+REDIS_HOST=127.0.0.1
+REDIS_PASSWORD=null
+REDIS_PORT=6379
+
+MAIL_DRIVER=smtp
+MAIL_HOST=mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_ENCRYPTION=null
+
+
+TWILIO_SOURCE_MOBILE_NUMBER=+447481338931
+TWILIO_USER_ID=AC5f0d5a51944ddbf821ea00c2bfd8a04e
+TWILIO_USER_PASSWORD=a0fb1706748dc12ccbb9501b5b904a74
 
 ```
 
 ***
 
 
-
-#METHOD 2:
->###Manage Twilio creadential at one safe place 
-Keep Twilio credentials in Laravel .env file as follows
-
-```php
-
-TWILIO_AUTH_ID=<YOUR_AUTH_SID_FROM_TWILIO>
-TWILIO_AUTH_SECRET=<YOUR_AUTH_TOKEN_FROM_TWILIO>
-TWILIO_SOURCE_NUMBER=+<YOUR_SENDER_MOBILE_NUMBER_FROM_TWILIO>
-
-
-```
-Just use the follwing single line to make your message deliverable.
-```php
-
-  Twilio::sendSMS(<ARRAY_DATA>,<YOUR_MESSAGE_TEXT>,<MESSAGE_TYPE>);
-
-
-```
-PARAMETERS
-
-| PARAMETER           | DESCRIPTION                             |
-|:------------------- |:----------------------------------------| 
-| YOUR_MESSAGE_TEXT   | Message text to be send                 | 
-|  MESSAGE_TYPE       | Message type (OTP,SMS)                  |
-|  ARRAY_DATA         | Consists of 'mobile_number' and 'otp'   |
-
-NOTE :
-```php
-
-    default <MESSAGE_TYPE> is "SMS"
-    'otp' index in <ARRAY_DATA> is optional 
-    defining array_data as follows.
-    $your_array_name = array( 'mobile_number'=> <Your _destination_mobile_number>,'otp'=><your_code>);
-
-
-```
-
->###Example Usage
-
-##Sending OTP
-
+The code to use above ".env" file is given below
 ```php
 
 <?php
 
-use Twilio;
-class SendSmsTwilio extends Controller
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+use Twilio; 
+
+
+/**
+ * Twilio - Package usage Example
+ *
+ * @access  public
+ * @since   1.2.0
+ * @author  lakshmaji 
+ */
+class TwilioTest extends Controller
 {
-  $userMobileData = array(
-                           'mobile_number' => <YOUR_MOBILE_NUMBER_HERE>,
-                           'otp'           => <YOUR_OTP_HERE>,
-                          );       
-  if(Twilio::sendSMS($userMobileData,"OTP to verify mobile number","OTP")) 
+  public function testMesssage()
   {
-    echo "sms sent successfully";
+
+    // initialize message array 
+    $message_array = array(
+        'sender_id'     => 'TWILIO_USER_ID',
+        'sender_secret' => 'TWILIO_USER_PASSWORD',
+        'reciver_mobile' => '99999999999',
+        'media_url' => 'http://goo.gl/F9igRq',
+        'otp'     =>'325456',
+        'sender' => 'TWILIO_SOURCE_MOBILE_NUMBER'
+    );
+
+    // This will send OTP only
+    $sms_response = Twilio::message($message_array,$op="otp only", false, true,  false ); // otp
+
+    return response()->json($sms_response,200);
   }
-  else
-  {
-    echo "sms delivery failed";
-  }
+
 }
+// end of class TwilioTest
+// end of file TwilioTest.php
+
 
 ```
-##Sending Message
+
+###miscellaneous
+##To send SMS
+```php
+  Twilio::message($message_array,$op="only msg", true,  false, false ); // sms
+```
+
+##To send MMS
+```php
+  Twilio::message($message_array,$op="only MMS", false, false, true  ); // media
+```
+##To send OTP
+```php
+  Twilio::message($message_array,$op="only verfication code", false, true,  false ); // otp
+```
+##To send both SMS and MMS
+```php
+  Twilio::message($message_array,$op="This is combaination both SMS and MMS", true,  false, true  ); // sms , media 
+```
+
+>### Responses
+
+| CODE           | DESCRIPTION                             |
+|:-------------- |:----------------------------------------| 
+|16000   | Error due to all flags are set to false or no flag was set| 
+|16001|Error due to all flags were set to true |
+|16002|No sms type was set witin the avialbel list of flag parameters|
+|16003|Un handled error|
+
+***
+>###> Handling Exceptions
 
 ```php
-
 <?php
 
-use Twilio;
-class SendSmsTwilio extends Controller
+namespace App\Exceptions;
+
+use Exception;
+use Lakshmajim\Twilio\Exception\TwilioException;
+
+
+/**
+ * Twilio - A Simple Exception handler class to Catch
+ * Exceptions thrown by TwilioException class 
+ *
+ * @author   lakshmaji 
+ */
+class Handler extends ExceptionHandler
 {
-  $userMobileData = array(
-                           'mobile_number' => <YOUR_MOBILE_NUMBER_HERE>
-                         );       
-  if(Twilio::sendSMS($userMobileData,"This is only textual message")) 
-  {
-    echo "sms sent successfully";
-  }
-  else
-  {
-    echo "sms delivery failed";
-  }
+ 
+    //....
+    //.................
+    //....
+    
+     /**
+     * Render an exception into an HTTP response.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Exception  $e
+     * @return \Illuminate\Http\Response
+     */
+    public function render($request, Exception $e)
+    {
+        if($e instanceof TwilioException)
+        {
+            return response()->json(array('message'=>$e->getMessage(),'status' =>$e->getStatusCode()),500);
+        }
+        return parent::render($request, $e);
+    }
 }
 
 ```
+In laravel we can easily handle the errors by using Handler.php (You can use custom Exception Handlr too)
 
-*** 
+
+>###Inavlid method calls
+
+   Twilio::message($message_array,$op="All set to true sms,mms,otp", true,  true,  true  ); // sms , otp , media
+   Twilio::message($message_array,$op="all set to false", false, false, false ); // none defined
+   Twilio::message($message_array,$op="all considered to be false"); //none defined
+   Twilio::message($message_array); 
+
+
+
+
 ***
 
 
