@@ -14,7 +14,7 @@ use Services_Twilio_RestException;
  * Twilio - A Twilio package for sending SMS 
  *
  * @package  Twilio
- * @version  1.0.2
+ * @version  1.2.0
  * @author   lakshmaji 
  */
 
@@ -144,7 +144,6 @@ class Twilio
     }
 
     //-------------------------------------------------------------------------
-
 }
 //end of Twilio class
 // end of file Twilio.php
