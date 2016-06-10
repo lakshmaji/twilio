@@ -51,7 +51,7 @@ Again do composer update
 
 ## METHOD, AVAILABLE PARAMETERS AND RESPONSES
 
-#####Methos
+#####Method
 ```php
 message(array, string, boolean, boolean, boolean)
 ```
