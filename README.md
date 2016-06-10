@@ -27,7 +27,7 @@ Run this command from the Terminal:
 
 ***
 
->##Laravel INTEGRATION
+>##LARAVEL INTEGRATION
 
 you need to add the service provider. Open `app/config/app.php`, and add a new item to the providers array.
 ```php
@@ -41,8 +41,7 @@ Again do composer update
 
 ***
 
-#METHOD 1:
->###Sending SMS
+>##SENDING SMS
 
 ```php
 
@@ -91,7 +90,7 @@ class TwilioTest extends Controller
 
 ```
 
->###message(array, string, boolean, boolean, boolean)
+>##message(array, string, boolean, boolean, boolean)
 
 
 ```php
@@ -125,7 +124,7 @@ The message_array contains follwing parameters
              
 
 
->###Example code for Laravel along with sample .env file
+>##Example code for Laravel along with sample .env file
 
 **.env file**
 ```erlang
@@ -212,7 +211,8 @@ class TwilioTest extends Controller
 
 ```
 
-###miscellaneous
+>##MISCELLANEOUS
+
 ##To send SMS
 ```php
   Twilio::message($message_array,$op="only msg", true,  false, false ); // sms
@@ -231,7 +231,7 @@ class TwilioTest extends Controller
   Twilio::message($message_array,$op="This is combaination both SMS and MMS", true,  false, true  ); // sms , media 
 ```
 
->### Responses
+>## RESPONSES
 
 | CODE           | DESCRIPTION                             |
 |:-------------- |:----------------------------------------| 
@@ -241,7 +241,7 @@ class TwilioTest extends Controller
 |16003|Un handled error|
 
 ***
->### Handling Exceptions
+>## Handling Exceptions
 
 ```php
 <?php
@@ -286,7 +286,7 @@ class Handler extends ExceptionHandler
 In laravel we can easily handle the errors by using Handler.php (You can use custom Exception Handlr too)
 
 
->###Inavlid method calls
+>##Inavlid method calls
 
 ```php
 Twilio::message($message_array,$op="All set to true sms,mms,otp", true,  true,  true  ); // sms , otp , media
