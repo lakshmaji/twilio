@@ -24,10 +24,67 @@
 
 <p><a href="http://lakshmajim.github.io/plivo/">Wiki on web</a></p>
 
-<blockquote>
+<h2>
+<a id="index" class="anchor" href="#index" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>INDEX</h2>
+
+<table>
+<thead>
+<tr>
+<th>Index</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/lakshmajim/twilio/blob/master/README.md#what-it-is">What it is</a></td>
+<td align="left">- Introduction</td>
+</tr>
+<tr>
+<td><a href="https://github.com/lakshmajim/twilio/blob/master/README.md#installation">Installation</a></td>
+<td align="left">- Installing Twilio package</td>
+</tr>
+<tr>
+<td><a href="https://github.com/lakshmajim/twilio/blob/master/README.md#laravel-integration">Laravel Integration</a></td>
+<td align="left">- Integrating this package with Laravel application</td>
+</tr>
+<tr>
+<td><a href="https://github.com/lakshmajim/twilio/blob/master/README.md#method-available-parameters-and-responses">Docs</a></td>
+<td align="left">- Description of methods available and parameters etc  <a href="https://github.com/lakshmajim/twilio/blob/master/README.md#method">Method</a> <a href="https://github.com/lakshmajim/twilio/blob/master/README.md#responses">Responses</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://github.com/lakshmajim/twilio/blob/master/README.md#miscellaneous">Miscellaneous</a></td>
+<td align="left">- Miscellaneous content regarding method calls</td>
+</tr>
+<tr>
+<td><a href="https://github.com/lakshmajim/twilio/blob/master/README.md#invalid-method-calls">Invalid method calls</a></td>
+<td align="left">- Invalid arguments (Not supported)</td>
+</tr>
+<tr>
+<td><a href="https://github.com/lakshmajim/twilio/blob/master/README.md#sending-sms">Sending SMS</a></td>
+<td align="left">- A simple Examp to illustarte the using this package</td>
+</tr>
+<tr>
+<td><a href="https://github.com/lakshmajim/twilio/blob/master/README.md#example-code-for-laravel-along-with-sample-env-file">Example with Laravel</a></td>
+<td align="left">- Sample code in Laravel</td>
+</tr>
+<tr>
+<td><a href="https://github.com/lakshmajim/twilio/blob/master/README.md#handling-exceptions">Exception Handling</a></td>
+<td align="left">- An Exception Handling mechanism to catch errors</td>
+</tr>
+<tr>
+<td><a href="https://github.com/lakshmajim/twilio/blob/master/README.md#twilio-trail-account-usage">Twilio</a></td>
+<td align="left">- How to Get registered on Twilio to use free trail account</td>
+</tr>
+<tr>
+<td><a href="https://github.com/lakshmajim/twilio/blob/master/README.md#licence">License</a></td>
+<td align="left">- License</td>
+</tr>
+</tbody>
+</table>
+
 <h2>
 <a id="what-it-is" class="anchor" href="#what-it-is" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>WHAT IT IS?</h2>
-</blockquote>
 
 <ul>
 <li>This package is used to send sms to any mobile number.</li>
@@ -43,10 +100,8 @@
 
 <hr>
 
-<blockquote>
 <h2>
 <a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>INSTALLATION</h2>
-</blockquote>
 
 <ul>
 <li>Download package form  <a href="https://github.com/lakshmajim/twilio">https://github.com/lakshmajim/twilio</a> . </li>
@@ -63,10 +118,8 @@
 
 <hr>
 
-<blockquote>
 <h2>
-<a id="laravel-integration" class="anchor" href="#laravel-integration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Laravel INTEGRATION</h2>
-</blockquote>
+<a id="laravel-integration" class="anchor" href="#laravel-integration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>LARAVEL INTEGRATION</h2>
 
 <p>you need to add the service provider. Open <code>app/config/app.php</code>, and add a new item to the providers array.</p>
 
@@ -80,13 +133,131 @@
 
 <hr>
 
-<h1>
-<a id="method-1" class="anchor" href="#method-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>METHOD 1:</h1>
+<h2>
+<a id="method-available-parameters-and-responses" class="anchor" href="#method-available-parameters-and-responses" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>METHOD, AVAILABLE PARAMETERS AND RESPONSES</h2>
 
-<blockquote>
-<h3>
-<a id="sending-sms" class="anchor" href="#sending-sms" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sending SMS</h3>
-</blockquote>
+<h5>
+<a id="method" class="anchor" href="#method" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Method</h5>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1">message(<span class="pl-k">array</span>, <span class="pl-k">string</span>, <span class="pl-k">boolean</span>, <span class="pl-k">boolean</span>, <span class="pl-k">boolean</span>)</span></pre></div>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"></span>
+<span class="pl-s1">    <span class="pl-smi">$message_array</span> <span class="pl-k">=</span> <span class="pl-c1">array</span>(</span>
+<span class="pl-s1">        <span class="pl-s"><span class="pl-pds">'</span>sender_id<span class="pl-pds">'</span></span>     <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>TWILIO_AUTH_SID<span class="pl-pds">'</span></span>,</span>
+<span class="pl-s1">        <span class="pl-s"><span class="pl-pds">'</span>sender_secret<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>TWILIO_AUTH_SECRET<span class="pl-pds">'</span></span>,</span>
+<span class="pl-s1">        <span class="pl-s"><span class="pl-pds">'</span>reciver_mobile<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>MOBILE_NUMBER<span class="pl-pds">'</span></span>,</span>
+<span class="pl-s1">        <span class="pl-s"><span class="pl-pds">'</span>media_url<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>MEDIA_URL<span class="pl-pds">'</span></span>,</span>
+<span class="pl-s1">        <span class="pl-s"><span class="pl-pds">'</span>otp<span class="pl-pds">'</span></span>     <span class="pl-k">=&gt;</span><span class="pl-s"><span class="pl-pds">'</span>OTP<span class="pl-pds">'</span></span>,</span>
+<span class="pl-s1">        <span class="pl-s"><span class="pl-pds">'</span>sender<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>TWILIO_SOURCE_NUMBER<span class="pl-pds">'</span></span></span>
+<span class="pl-s1">    );</span>
+<span class="pl-s1"></span></pre></div>
+
+<h5>
+<a id="the-message_array-parameters" class="anchor" href="#the-message_array-parameters" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>The message_array parameters</h5>
+
+<table>
+<thead>
+<tr>
+<th align="left">PARAMETER</th>
+<th align="left">DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">sender_id</td>
+<td align="left">This is the key defined in ".env" file for auth_sid</td>
+</tr>
+<tr>
+<td align="left">sender_secret</td>
+<td align="left">This is the key defined in ".env" file for auth_secret</td>
+</tr>
+<tr>
+<td align="left">sender</td>
+<td align="left">This is the key defined in .env file for sender mobile number</td>
+</tr>
+<tr>
+<td align="left">reciver_mobile</td>
+<td align="left">This is the receivers mobile number</td>
+</tr>
+<tr>
+<td align="left">media_url</td>
+<td align="left">This is the "uri" for mutimedia</td>
+</tr>
+<tr>
+<td align="left">otp</td>
+<td align="left">This key values associates with the otp</td>
+</tr>
+</tbody>
+</table>
+
+<h5>
+<a id="responses" class="anchor" href="#responses" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Responses</h5>
+
+<table>
+<thead>
+<tr>
+<th align="left">CODE</th>
+<th align="left">DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">16000</td>
+<td align="left">Error due to all flags are set to false or no flag was set</td>
+</tr>
+<tr>
+<td align="left">16001</td>
+<td align="left">Error due to all flags were set to true</td>
+</tr>
+<tr>
+<td align="left">16002</td>
+<td align="left">No sms type was set witin the avialbel list of flag parameters</td>
+</tr>
+<tr>
+<td align="left">16003</td>
+<td align="left">Un handled error</td>
+</tr>
+</tbody>
+</table>
+
+<hr>
+
+<h2>
+<a id="miscellaneous" class="anchor" href="#miscellaneous" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>MISCELLANEOUS</h2>
+
+<h5>
+<a id="to-send-sms" class="anchor" href="#to-send-sms" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>To send SMS</h5>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1">  <span class="pl-c1">Twilio</span><span class="pl-k">::</span>message(<span class="pl-smi">$message_array</span>,<span class="pl-smi">$op</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>only msg<span class="pl-pds">"</span></span>, <span class="pl-c1">true</span>,  <span class="pl-c1">false</span>, <span class="pl-c1">false</span> ); <span class="pl-c">// sms</span></span></pre></div>
+
+<h5>
+<a id="to-send-mms" class="anchor" href="#to-send-mms" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>To send MMS</h5>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1">  <span class="pl-c1">Twilio</span><span class="pl-k">::</span>message(<span class="pl-smi">$message_array</span>,<span class="pl-smi">$op</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>only MMS<span class="pl-pds">"</span></span>, <span class="pl-c1">false</span>, <span class="pl-c1">false</span>, <span class="pl-c1">true</span>  ); <span class="pl-c">// media</span></span></pre></div>
+
+<h5>
+<a id="to-send-otp" class="anchor" href="#to-send-otp" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>To send OTP</h5>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1">  <span class="pl-c1">Twilio</span><span class="pl-k">::</span>message(<span class="pl-smi">$message_array</span>,<span class="pl-smi">$op</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>only verfication code<span class="pl-pds">"</span></span>, <span class="pl-c1">false</span>, <span class="pl-c1">true</span>,  <span class="pl-c1">false</span> ); <span class="pl-c">// otp</span></span></pre></div>
+
+<h5>
+<a id="to-send-both-sms-and-mms" class="anchor" href="#to-send-both-sms-and-mms" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>To send both SMS and MMS</h5>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1">  <span class="pl-c1">Twilio</span><span class="pl-k">::</span>message(<span class="pl-smi">$message_array</span>,<span class="pl-smi">$op</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>This is combaination both SMS and MMS<span class="pl-pds">"</span></span>, <span class="pl-c1">true</span>,  <span class="pl-c1">false</span>, <span class="pl-c1">true</span>  ); <span class="pl-c">// sms , media </span></span></pre></div>
+
+<h5>
+<a id="invalid-method-calls" class="anchor" href="#invalid-method-calls" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>INVALID METHOD CALLS</h5>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">Twilio</span><span class="pl-k">::</span>message(<span class="pl-smi">$message_array</span>,<span class="pl-smi">$op</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>All set to true sms,mms,otp<span class="pl-pds">"</span></span>, <span class="pl-c1">true</span>,  <span class="pl-c1">true</span>,  <span class="pl-c1">true</span>  ); <span class="pl-c">// sms , otp , media</span></span>
+<span class="pl-s1"><span class="pl-c1">Twilio</span><span class="pl-k">::</span>message(<span class="pl-smi">$message_array</span>,<span class="pl-smi">$op</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>all set to false<span class="pl-pds">"</span></span>, <span class="pl-c1">false</span>, <span class="pl-c1">false</span>, <span class="pl-c1">false</span> );            <span class="pl-c">// none defined</span></span>
+<span class="pl-s1"><span class="pl-c1">Twilio</span><span class="pl-k">::</span>message(<span class="pl-smi">$message_array</span>,<span class="pl-smi">$op</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>all considered to be false<span class="pl-pds">"</span></span>);                        <span class="pl-c">// none defined</span></span>
+<span class="pl-s1"><span class="pl-c1">Twilio</span><span class="pl-k">::</span>message(<span class="pl-smi">$message_array</span>); </span>
+<span class="pl-s1"></span></pre></div>
+
+<hr>
+
+<h2>
+<a id="sending-sms" class="anchor" href="#sending-sms" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>SENDING SMS</h2>
 
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"></span>
 <span class="pl-s1"><span class="pl-k">&lt;</span>?<span class="pl-c1">php</span></span>
@@ -133,63 +304,8 @@
 <span class="pl-s1"><span class="pl-c">// end of file TwilioTest.php</span></span>
 <span class="pl-s1"></span></pre></div>
 
-<blockquote>
-<h3>
-<a id="messagearray-string-boolean-boolean-boolean" class="anchor" href="#messagearray-string-boolean-boolean-boolean" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>message(array, string, boolean, boolean, boolean)</h3>
-</blockquote>
-
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"></span>
-<span class="pl-s1">    <span class="pl-smi">$message_array</span> <span class="pl-k">=</span> <span class="pl-c1">array</span>(</span>
-<span class="pl-s1">        <span class="pl-s"><span class="pl-pds">'</span>sender_id<span class="pl-pds">'</span></span>     <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>TWILIO_AUTH_SID<span class="pl-pds">'</span></span>,</span>
-<span class="pl-s1">        <span class="pl-s"><span class="pl-pds">'</span>sender_secret<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>TWILIO_AUTH_SECRET<span class="pl-pds">'</span></span>,</span>
-<span class="pl-s1">        <span class="pl-s"><span class="pl-pds">'</span>reciver_mobile<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>MOBILE_NUMBER<span class="pl-pds">'</span></span>,</span>
-<span class="pl-s1">        <span class="pl-s"><span class="pl-pds">'</span>media_url<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>MEDIA_URL<span class="pl-pds">'</span></span>,</span>
-<span class="pl-s1">        <span class="pl-s"><span class="pl-pds">'</span>otp<span class="pl-pds">'</span></span>     <span class="pl-k">=&gt;</span><span class="pl-s"><span class="pl-pds">'</span>OTP<span class="pl-pds">'</span></span>,</span>
-<span class="pl-s1">        <span class="pl-s"><span class="pl-pds">'</span>sender<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>TWILIO_SOURCE_NUMBER<span class="pl-pds">'</span></span></span>
-<span class="pl-s1">    );</span>
-<span class="pl-s1"></span></pre></div>
-
-<p>The message_array contains follwing parameters </p>
-
-<table>
-<thead>
-<tr>
-<th align="left">PARAMETER</th>
-<th align="left">DESCRIPTION</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">sender_id</td>
-<td align="left">This is the key defined in ".env" file for auth_sid</td>
-</tr>
-<tr>
-<td align="left">sender_secret</td>
-<td align="left">This is the key defined in ".env" file for auth_secret</td>
-</tr>
-<tr>
-<td align="left">sender</td>
-<td align="left">This is the key defined in .env file for sender mobile number</td>
-</tr>
-<tr>
-<td align="left">reciver_mobile</td>
-<td align="left">This is the receivers mobile number</td>
-</tr>
-<tr>
-<td align="left">media_url</td>
-<td align="left">This is the "uri" for mutimedia</td>
-</tr>
-<tr>
-<td align="left">otp</td>
-<td align="left">This key values associates with the otp</td>
-</tr>
-</tbody>
-</table>
-
-<blockquote>
-<h3>
-<a id="example-code-for-laravel-along-with-sample-env-file" class="anchor" href="#example-code-for-laravel-along-with-sample-env-file" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example code for Laravel along with sample .env file</h3>
-</blockquote>
+<h2>
+<a id="example-code-for-laravel-along-with-sample-env-file" class="anchor" href="#example-code-for-laravel-along-with-sample-env-file" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example code for Laravel along with sample .env file</h2>
 
 <p><strong>.env file</strong></p>
 
@@ -223,8 +339,6 @@
 <span class="pl-smi">TWILIO_USER_ID</span><span class="pl-k">=</span><span class="pl-smi">AC5f0d5a51944ddbf821ea00c2bfd8a04e</span>
 <span class="pl-smi">TWILIO_USER_PASSWORD</span><span class="pl-k">=</span><span class="pl-c1">a0fb1706748dc12ccbb9501b5b904a74</span>
 </pre></div>
-
-<hr>
 
 <p>The code to use above ".env" file is given below</p>
 
@@ -273,67 +387,10 @@
 <span class="pl-s1"></span>
 <span class="pl-s1"></span></pre></div>
 
-<h3>
-<a id="miscellaneous" class="anchor" href="#miscellaneous" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>miscellaneous</h3>
-
-<h2>
-<a id="to-send-sms" class="anchor" href="#to-send-sms" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>To send SMS</h2>
-
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1">  <span class="pl-c1">Twilio</span><span class="pl-k">::</span>message(<span class="pl-smi">$message_array</span>,<span class="pl-smi">$op</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>only msg<span class="pl-pds">"</span></span>, <span class="pl-c1">true</span>,  <span class="pl-c1">false</span>, <span class="pl-c1">false</span> ); <span class="pl-c">// sms</span></span></pre></div>
-
-<h2>
-<a id="to-send-mms" class="anchor" href="#to-send-mms" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>To send MMS</h2>
-
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1">  <span class="pl-c1">Twilio</span><span class="pl-k">::</span>message(<span class="pl-smi">$message_array</span>,<span class="pl-smi">$op</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>only MMS<span class="pl-pds">"</span></span>, <span class="pl-c1">false</span>, <span class="pl-c1">false</span>, <span class="pl-c1">true</span>  ); <span class="pl-c">// media</span></span></pre></div>
-
-<h2>
-<a id="to-send-otp" class="anchor" href="#to-send-otp" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>To send OTP</h2>
-
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1">  <span class="pl-c1">Twilio</span><span class="pl-k">::</span>message(<span class="pl-smi">$message_array</span>,<span class="pl-smi">$op</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>only verfication code<span class="pl-pds">"</span></span>, <span class="pl-c1">false</span>, <span class="pl-c1">true</span>,  <span class="pl-c1">false</span> ); <span class="pl-c">// otp</span></span></pre></div>
-
-<h2>
-<a id="to-send-both-sms-and-mms" class="anchor" href="#to-send-both-sms-and-mms" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>To send both SMS and MMS</h2>
-
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1">  <span class="pl-c1">Twilio</span><span class="pl-k">::</span>message(<span class="pl-smi">$message_array</span>,<span class="pl-smi">$op</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>This is combaination both SMS and MMS<span class="pl-pds">"</span></span>, <span class="pl-c1">true</span>,  <span class="pl-c1">false</span>, <span class="pl-c1">true</span>  ); <span class="pl-c">// sms , media </span></span></pre></div>
-
-<blockquote>
-<h3>
-<a id="responses" class="anchor" href="#responses" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Responses</h3>
-</blockquote>
-
-<table>
-<thead>
-<tr>
-<th align="left">CODE</th>
-<th align="left">DESCRIPTION</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">16000</td>
-<td align="left">Error due to all flags are set to false or no flag was set</td>
-</tr>
-<tr>
-<td align="left">16001</td>
-<td align="left">Error due to all flags were set to true</td>
-</tr>
-<tr>
-<td align="left">16002</td>
-<td align="left">No sms type was set witin the avialbel list of flag parameters</td>
-</tr>
-<tr>
-<td align="left">16003</td>
-<td align="left">Un handled error</td>
-</tr>
-</tbody>
-</table>
-
 <hr>
 
-<blockquote>
-<h3>
-<a id="handling-exceptions" class="anchor" href="#handling-exceptions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Handling Exceptions</h3>
-</blockquote>
+<h2>
+<a id="handling-exceptions" class="anchor" href="#handling-exceptions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Handling Exceptions</h2>
 
 <div class="highlight highlight-text-html-php"><pre><span class="pl-pse">&lt;?php</span><span class="pl-s1"></span>
 <span class="pl-s1"></span>
@@ -376,22 +433,10 @@
 
 <p>In laravel we can easily handle the errors by using Handler.php (You can use custom Exception Handlr too)</p>
 
-<blockquote>
-<h3>
-<a id="inavlid-method-calls" class="anchor" href="#inavlid-method-calls" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Inavlid method calls</h3>
-</blockquote>
-
-<p>Twilio::message($message_array,$op="All set to true sms,mms,otp", true,  true,  true  ); // sms , otp , media
-   Twilio::message($message_array,$op="all set to false", false, false, false ); // none defined
-   Twilio::message($message_array,$op="all considered to be false"); //none defined
-   Twilio::message($message_array); </p>
-
 <hr>
 
-<blockquote>
 <h2>
 <a id="twilio-trail-account-usage" class="anchor" href="#twilio-trail-account-usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>TWILIO TRAIL ACCOUNT USAGE:</h2>
-</blockquote>
 
 <ul>
 <li>If You are trying to implement SMS functionality with Twilio the you need to verify the list of destination mobile numbers at <a href="https://www.twilio.com/user/account/phone-numbers/verified">Twilio</a>
@@ -404,10 +449,8 @@
 
 <hr>
 
-<blockquote>
 <h2>
 <a id="licence" class="anchor" href="#licence" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Licence</h2>
-</blockquote>
 
 <p><a href="https://opensource.org/licenses/MIT"><em>MIT License (MIT)</em></a></p>
 
