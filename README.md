@@ -1,6 +1,39 @@
 # Laravel - Twilio
 [Wiki on web](http://lakshmajim.github.io/plivo/)
 
+## INDEX
+
+|Index|Description|
+|:--:|:---|
+
+|[What it is](https://github.com/lakshmajim/twilio/blob/master/README.md#what-it-is)||
+
+|[Installation](https://github.com/lakshmajim/twilio/blob/master/README.md#installation) |- Installing Twilio package |
+
+|[Laravel Integration](https://github.com/lakshmajim/twilio/blob/master/README.md#laravel-integration) |- Integrating this package with Laravel application|
+
+|[Docs](https://github.com/lakshmajim/twilio/blob/master/README.md#method-available-parameters-and-responses) |- Description of methods available and parameters etc|
+
+  [Method](https://github.com/lakshmajim/twilio/blob/master/README.md#method)
+
+  [Responses](https://github.com/lakshmajim/twilio/blob/master/README.md#responses)|
+
+|[Miscellaneous](https://github.com/lakshmajim/twilio/blob/master/README.md#miscellaneous) |- Miscellaneous content regarding method calls
+
+  [Invalid method calls](https://github.com/lakshmajim/twilio/blob/master/README.md#invalid-method-calls)|
+
+|[Sending SMS](https://github.com/lakshmajim/twilio/blob/master/README.md#sending-sms) |- A simple Examp to illustarte the using this package|
+
+|[Example with Laravel](https://github.com/lakshmajim/twilio/blob/master/README.md#example-code-for-laravel-along-with-sample-env-file)|- Sample code in Laravel|
+
+|[Exception Handling](https://github.com/lakshmajim/twilio/blob/master/README.md#handling-exceptions) |- An Exception Handling mechanism to catch errors|
+
+|[Twilio](https://github.com/lakshmajim/twilio/blob/master/README.md#twilio-trail-account-usage) |- How to Get registered on Twilio to use free trail account|
+
+|[License](https://github.com/lakshmajim/twilio/blob/master/README.md#licence) |- License|
+
+
+
 ##WHAT IT IS?
 
 
