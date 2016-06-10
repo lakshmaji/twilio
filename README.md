@@ -1,7 +1,9 @@
 # Laravel - Twilio
 [Wiki on web](http://lakshmajim.github.io/plivo/)
 
->##WHAT IT IS?
+##WHAT IT IS?
+
+***
 
 - This package is used to send sms to any mobile number.
 - This uses [Twilio](https://www.twilio.com/) API.
@@ -9,10 +11,15 @@
   - after registration click on Account ,there you will be able to see authsid and authtoken. 
   - You have assigned a sender mobile number which can be found at [Twilio](https://www.twilio.com/user/account/phone-numbers/incoming),which is used to send Text Messages or MMS and ShortCodes etc.
 
+
+
+
+
+
+
+##INSTALLATION
+
 ***
-
->##INSTALLATION
-
  - Download package form  https://github.com/lakshmajim/twilio . 
  - OR YOU CAN RUN FOLLOWING COMMAND FROM TERMINAL
  - With composer you can run this line **composer require lakshmajim/twilio**
@@ -27,7 +34,7 @@ Run this command from the Terminal:
 
 ***
 
->##LARAVEL INTEGRATION
+##LARAVEL INTEGRATION
 
 you need to add the service provider. Open `app/config/app.php`, and add a new item to the providers array.
 ```php
