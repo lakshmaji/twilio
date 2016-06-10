@@ -3,7 +3,7 @@
 
 ##WHAT IT IS?
 
-***
+
 
 - This package is used to send sms to any mobile number.
 - This uses [Twilio](https://www.twilio.com/) API.
@@ -13,13 +13,13 @@
 
 
 
-
+---
 
 
 
 ##INSTALLATION
 
-***
+
  - Download package form  https://github.com/lakshmajim/twilio . 
  - OR YOU CAN RUN FOLLOWING COMMAND FROM TERMINAL
  - With composer you can run this line **composer require lakshmajim/twilio**
@@ -48,7 +48,97 @@ Again do composer update
 
 ***
 
->##SENDING SMS
+
+
+##message(array, string, boolean, boolean, boolean)
+
+
+```php
+
+    $message_array = array(
+        'sender_id'     => 'TWILIO_AUTH_SID',
+        'sender_secret' => 'TWILIO_AUTH_SECRET',
+        'reciver_mobile' => 'MOBILE_NUMBER',
+        'media_url' => 'MEDIA_URL',
+        'otp'     =>'OTP',
+        'sender' => 'TWILIO_SOURCE_NUMBER'
+    );
+  
+```
+
+The message_array contains follwing parameters 
+
+| PARAMETER           | DESCRIPTION                             |
+|:-------------- |:----------------------------------------| 
+|sender_id   | This is the key defined in ".env" file for auth_sid                | 
+|sender_secret| This is the key defined in ".env" file for auth_secret                  |
+|  sender         | This is the key defined in .env file for sender mobile number  |
+|reciver_mobile| This is the receivers mobile number|
+|media_url|This is the "uri" for mutimedia|
+|otp|This key values associates with the otp|
+     
+ 
+        
+## RESPONSES
+
+| CODE           | DESCRIPTION                             |
+|:-------------- |:----------------------------------------| 
+|16000   | Error due to all flags are set to false or no flag was set| 
+|16001|Error due to all flags were set to true |
+|16002|No sms type was set witin the avialbel list of flag parameters|
+|16003|Un handled error|
+
+
+
+***
+
+
+##MISCELLANEOUS
+
+##To send SMS
+```php
+  Twilio::message($message_array,$op="only msg", true,  false, false ); // sms
+```
+
+##To send MMS
+```php
+  Twilio::message($message_array,$op="only MMS", false, false, true  ); // media
+```
+##To send OTP
+```php
+  Twilio::message($message_array,$op="only verfication code", false, true,  false ); // otp
+```
+##To send both SMS and MMS
+```php
+  Twilio::message($message_array,$op="This is combaination both SMS and MMS", true,  false, true  ); // sms , media 
+```
+
+
+***
+
+##Inavlid method calls
+
+```php
+Twilio::message($message_array,$op="All set to true sms,mms,otp", true,  true,  true  ); // sms , otp , media
+   Twilio::message($message_array,$op="all set to false", false, false, false );         // none defined
+   Twilio::message($message_array,$op="all considered to be false");                     //none defined
+   Twilio::message($message_array); 
+
+```
+
+
+***
+
+
+
+
+
+
+
+
+
+
+##SENDING SMS
 
 ```php
 
@@ -97,41 +187,12 @@ class TwilioTest extends Controller
 
 ```
 
->##message(array, string, boolean, boolean, boolean)
-
-
-```php
-
-    $message_array = array(
-        'sender_id'     => 'TWILIO_AUTH_SID',
-        'sender_secret' => 'TWILIO_AUTH_SECRET',
-        'reciver_mobile' => 'MOBILE_NUMBER',
-        'media_url' => 'MEDIA_URL',
-        'otp'     =>'OTP',
-        'sender' => 'TWILIO_SOURCE_NUMBER'
-    );
-  
-```
-
-The message_array contains follwing parameters 
-
-| PARAMETER           | DESCRIPTION                             |
-|:-------------- |:----------------------------------------| 
-|sender_id   | This is the key defined in ".env" file for auth_sid                | 
-|sender_secret| This is the key defined in ".env" file for auth_secret                  |
-|  sender         | This is the key defined in .env file for sender mobile number  |
-|reciver_mobile| This is the receivers mobile number|
-|media_url|This is the "uri" for mutimedia|
-|otp|This key values associates with the otp|
-     
- 
-        
 
       
              
 
 
->##Example code for Laravel along with sample .env file
+##Example code for Laravel along with sample .env file
 
 **.env file**
 ```erlang
@@ -218,37 +279,8 @@ class TwilioTest extends Controller
 
 ```
 
->##MISCELLANEOUS
 
-##To send SMS
-```php
-  Twilio::message($message_array,$op="only msg", true,  false, false ); // sms
-```
-
-##To send MMS
-```php
-  Twilio::message($message_array,$op="only MMS", false, false, true  ); // media
-```
-##To send OTP
-```php
-  Twilio::message($message_array,$op="only verfication code", false, true,  false ); // otp
-```
-##To send both SMS and MMS
-```php
-  Twilio::message($message_array,$op="This is combaination both SMS and MMS", true,  false, true  ); // sms , media 
-```
-
->## RESPONSES
-
-| CODE           | DESCRIPTION                             |
-|:-------------- |:----------------------------------------| 
-|16000   | Error due to all flags are set to false or no flag was set| 
-|16001|Error due to all flags were set to true |
-|16002|No sms type was set witin the avialbel list of flag parameters|
-|16003|Un handled error|
-
-***
->## Handling Exceptions
+## Handling Exceptions
 
 ```php
 <?php
@@ -293,23 +325,11 @@ class Handler extends ExceptionHandler
 In laravel we can easily handle the errors by using Handler.php (You can use custom Exception Handlr too)
 
 
->##Inavlid method calls
-
-```php
-Twilio::message($message_array,$op="All set to true sms,mms,otp", true,  true,  true  ); // sms , otp , media
-   Twilio::message($message_array,$op="all set to false", false, false, false );         // none defined
-   Twilio::message($message_array,$op="all considered to be false");                     //none defined
-   Twilio::message($message_array); 
-
-```
-
-
-***
 
 
 
 
->## TWILIO TRAIL ACCOUNT USAGE:
+## TWILIO TRAIL ACCOUNT USAGE:
 
  - If You are trying to implement SMS functionality with Twilio the you need to verify the list of destination mobile numbers at [Twilio](https://www.twilio.com/user/account/phone-numbers/verified)
 ![VERIFIED NUMBERS](https://raw.githubusercontent.com/lakshmajim/images/master/verified_numbers.png)
@@ -318,7 +338,7 @@ Twilio::message($message_array,$op="All set to true sms,mms,otp", true,  true,  
 
 ***
 
->##Licence
+##Licence
 
 [*MIT License (MIT)*](https://opensource.org/licenses/MIT)
 
