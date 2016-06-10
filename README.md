@@ -117,7 +117,6 @@ message(array, string, boolean, boolean, boolean)
 ```
 
 
-***
 
 #####INVALID METHOD CALLS
 
@@ -231,7 +230,6 @@ TWILIO_USER_PASSWORD=a0fb1706748dc12ccbb9501b5b904a74
 
 ```
 
-***
 
 
 The code to use above ".env" file is given below
@@ -282,6 +280,7 @@ class TwilioTest extends Controller
 
 ```
 
+***
 
 ## Handling Exceptions
 
@@ -330,7 +329,7 @@ In laravel we can easily handle the errors by using Handler.php (You can use cus
 
 
 
-
+***
 
 ## TWILIO TRAIL ACCOUNT USAGE:
 
