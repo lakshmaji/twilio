@@ -49,9 +49,12 @@ Again do composer update
 ***
 
 
+## METHOD, AVAILABLE PARAMETERS AND RESPONSES
 
-##message(array, string, boolean, boolean, boolean)
-
+#####Methos
+```php
+message(array, string, boolean, boolean, boolean)
+```
 
 ```php
 
@@ -66,7 +69,7 @@ Again do composer update
   
 ```
 
-The message_array contains follwing parameters 
+##### The message_array parameters 
 
 | PARAMETER           | DESCRIPTION                             |
 |:-------------- |:----------------------------------------| 
@@ -79,7 +82,7 @@ The message_array contains follwing parameters
      
  
         
-## RESPONSES
+##### Responses
 
 | CODE           | DESCRIPTION                             |
 |:-------------- |:----------------------------------------| 
@@ -95,20 +98,20 @@ The message_array contains follwing parameters
 
 ##MISCELLANEOUS
 
-##To send SMS
+#####To send SMS
 ```php
   Twilio::message($message_array,$op="only msg", true,  false, false ); // sms
 ```
 
-##To send MMS
+#####To send MMS
 ```php
   Twilio::message($message_array,$op="only MMS", false, false, true  ); // media
 ```
-##To send OTP
+#####To send OTP
 ```php
   Twilio::message($message_array,$op="only verfication code", false, true,  false ); // otp
 ```
-##To send both SMS and MMS
+#####To send both SMS and MMS
 ```php
   Twilio::message($message_array,$op="This is combaination both SMS and MMS", true,  false, true  ); // sms , media 
 ```
@@ -116,13 +119,13 @@ The message_array contains follwing parameters
 
 ***
 
-##Inavlid method calls
+#####INVALID METHOD CALLS
 
 ```php
 Twilio::message($message_array,$op="All set to true sms,mms,otp", true,  true,  true  ); // sms , otp , media
-   Twilio::message($message_array,$op="all set to false", false, false, false );         // none defined
-   Twilio::message($message_array,$op="all considered to be false");                     //none defined
-   Twilio::message($message_array); 
+Twilio::message($message_array,$op="all set to false", false, false, false );            // none defined
+Twilio::message($message_array,$op="all considered to be false");                        // none defined
+Twilio::message($message_array); 
 
 ```
 
