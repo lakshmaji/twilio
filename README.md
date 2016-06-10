@@ -288,12 +288,13 @@ In laravel we can easily handle the errors by using Handler.php (You can use cus
 
 >###Inavlid method calls
 
-   Twilio::message($message_array,$op="All set to true sms,mms,otp", true,  true,  true  ); // sms , otp , media
-   Twilio::message($message_array,$op="all set to false", false, false, false ); // none defined
-   Twilio::message($message_array,$op="all considered to be false"); //none defined
+```php
+Twilio::message($message_array,$op="All set to true sms,mms,otp", true,  true,  true  ); // sms , otp , media
+   Twilio::message($message_array,$op="all set to false", false, false, false );         // none defined
+   Twilio::message($message_array,$op="all considered to be false");                     //none defined
    Twilio::message($message_array); 
 
-
+```
 
 
 ***
