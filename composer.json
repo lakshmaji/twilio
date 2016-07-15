@@ -2,7 +2,7 @@
     "name": "lakshmajim/twilio",
     "description": "SMS sending using Twilio",
     "keywords": [
-        "Twilio"
+        "Twilio","Laravel"
     ],
     "license": "MIT",
     "authors": [
