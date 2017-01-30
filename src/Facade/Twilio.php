@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Facade;
  * Twilio - Facade to support integration with Laravel framework 
  *
  * @package  Twilio
- * @version  1.0.0
+ * @version  1.2.2
  * @author   lakshmaji 
  */ 
 class Twilio extends Facade {

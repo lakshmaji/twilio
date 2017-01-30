@@ -14,7 +14,7 @@ use Services_Twilio_RestException;
  * Twilio - A Twilio package for sending SMS 
  *
  * @package  Twilio
- * @version  1.2.0
+ * @version  1.2.2
  * @author   lakshmaji 
  */
 
@@ -48,9 +48,9 @@ class Twilio
      *
      * @return mixed
      *
-     * @since  Method available since Release 1.0.0
-     *
-     * @author lakshmajim 
+     * @since   Method available since Release 1.0.0
+     * @version 1.2.2
+     * @author  lakshmajim 
      */
     public function message($message_array, $optional_message = "You got a message form Ananth ", $sms = false , $otp = false, $media = false)
     {

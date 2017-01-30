@@ -1,4 +1,6 @@
-<?php namespace Lakshmajim\Twilio;
+<?php 
+
+namespace Lakshmajim\Twilio;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -6,7 +8,7 @@ use Illuminate\Support\ServiceProvider;
  * Twilio - ServicePrivider to support integration with Laravel framework 
  *
  * @package  Twilio
- * @version  1.0.0
+ * @version  1.2.2
  * @author   lakshmaji 
  */ 
 
@@ -25,13 +27,24 @@ class TwilioServiceProvider extends ServiceProvider
     /**
      * Register the application services.
      *
-     * @return void
+     * @return   Twilio
+     * @version  1.2.2
+     * @author   lakshmaji 
      */
     public function register()
     {
-        $this->app['twilio'] = $this->app->share(function($app) {
-            return new Twilio;
-        });
+        if (method_exists(\Illuminate\Foundation\Application::class, 'singleton')) {
+            $this->app->singleton('twilio', function($app) {
+                return new Twilio;
+            });
+        } else {
+            $this->app['twilio'] = $this->app->share(function($app) {
+                return new Twilio;
+            });
+        }
+        // $this->app['twilio'] = $this->app->share(function($app) {
+        //     return new Twilio;
+        // });
     }
 }
 // end of TwilioServiceProvider class
