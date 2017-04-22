@@ -1,6 +1,6 @@
 <?php
 
-namespace Lakshmajim\Twilio\Exception;
+namespace Lakshmaji\Twilio\Exception;
 
 
 /**

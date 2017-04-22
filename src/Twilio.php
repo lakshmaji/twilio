@@ -1,12 +1,12 @@
 <?php 
 
-namespace Lakshmajim\Twilio;
+namespace Lakshmaji\Twilio;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Services_Twilio;
-use Lakshmajim\Twilio\Exception\TwilioException;
+use Lakshmaji\Twilio\Exception\TwilioException;
 use Services_Twilio_RestException;
 
 

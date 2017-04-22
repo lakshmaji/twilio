@@ -1,21 +1,21 @@
 # Laravel - Twilio
-[Wiki on web](http://lakshmajim.github.io/plivo/)
+[Wiki on web](http://lakshmaji.github.io/plivo/)
 
 ## INDEX
 
 |Index|Description|
 |---|:---|
-|[What it is](https://github.com/lakshmajim/twilio/blob/master/README.md#what-it-is)|- Introduction|
-|[Installation](https://github.com/lakshmajim/twilio/blob/master/README.md#installation) |- Installing Twilio package |
-|[Laravel Integration](https://github.com/lakshmajim/twilio/blob/master/README.md#laravel-integration) |- Integrating this package with Laravel application|
-|[Docs](https://github.com/lakshmajim/twilio/blob/master/README.md#method-available-parameters-and-responses)|- Description of methods available and parameters etc  [Method](https://github.com/lakshmajim/twilio/blob/master/README.md#method) [Responses](https://github.com/lakshmajim/twilio/blob/master/README.md#responses)|
-|[Miscellaneous](https://github.com/lakshmajim/twilio/blob/master/README.md#miscellaneous) |- Miscellaneous content regarding method calls
-  [Invalid method calls](https://github.com/lakshmajim/twilio/blob/master/README.md#invalid-method-calls)|- Invalid arguments (Not supported)|
-|[Sending SMS](https://github.com/lakshmajim/twilio/blob/master/README.md#sending-sms) |- A simple Examp to illustarte the using this package|
-|[Example with Laravel](https://github.com/lakshmajim/twilio/blob/master/README.md#example-code-for-laravel-along-with-sample-env-file)|- Sample code in Laravel|
-|[Exception Handling](https://github.com/lakshmajim/twilio/blob/master/README.md#handling-exceptions) |- An Exception Handling mechanism to catch errors|
-|[Twilio](https://github.com/lakshmajim/twilio/blob/master/README.md#twilio-trail-account-usage) |- How to Get registered on Twilio to use free trail account|
-|[License](https://github.com/lakshmajim/twilio/blob/master/README.md#licence) |- License|
+|[What it is](https://github.com/lakshmaji/twilio/blob/master/README.md#what-it-is)|- Introduction|
+|[Installation](https://github.com/lakshmaji/twilio/blob/master/README.md#installation) |- Installing Twilio package |
+|[Laravel Integration](https://github.com/lakshmaji/twilio/blob/master/README.md#laravel-integration) |- Integrating this package with Laravel application|
+|[Docs](https://github.com/lakshmaji/twilio/blob/master/README.md#method-available-parameters-and-responses)|- Description of methods available and parameters etc  [Method](https://github.com/lakshmaji/twilio/blob/master/README.md#method) [Responses](https://github.com/lakshmaji/twilio/blob/master/README.md#responses)|
+|[Miscellaneous](https://github.com/lakshmaji/twilio/blob/master/README.md#miscellaneous) |- Miscellaneous content regarding method calls
+  [Invalid method calls](https://github.com/lakshmaji/twilio/blob/master/README.md#invalid-method-calls)|- Invalid arguments (Not supported)|
+|[Sending SMS](https://github.com/lakshmaji/twilio/blob/master/README.md#sending-sms) |- A simple Examp to illustarte the using this package|
+|[Example with Laravel](https://github.com/lakshmaji/twilio/blob/master/README.md#example-code-for-laravel-along-with-sample-env-file)|- Sample code in Laravel|
+|[Exception Handling](https://github.com/lakshmaji/twilio/blob/master/README.md#handling-exceptions) |- An Exception Handling mechanism to catch errors|
+|[Twilio](https://github.com/lakshmaji/twilio/blob/master/README.md#twilio-trail-account-usage) |- How to Get registered on Twilio to use free trail account|
+|[License](https://github.com/lakshmaji/twilio/blob/master/README.md#licence) |- License|
 
 
 
@@ -38,14 +38,14 @@
 ##INSTALLATION
 
 
- - Download package form  https://github.com/lakshmajim/twilio . 
+ - Download package form  https://github.com/lakshmaji/twilio . 
  - OR YOU CAN RUN FOLLOWING COMMAND FROM TERMINAL
- - With composer you can run this line **composer require lakshmajim/twilio**
+ - With composer you can run this line **composer require lakshmaji/twilio**
 
 Run this command from the Terminal:
 
 ```bash
-    composer require lakshmajim/twilio
+    composer require lakshmaji/twilio
     composer dumpautoload
     composer update
 ```
@@ -56,11 +56,11 @@ Run this command from the Terminal:
 
 you need to add the service provider. Open `app/config/app.php`, and add a new item to the providers array.
 ```php
-  Lakshmajim\Twilio\TwilioServiceProvider::class,
+  Lakshmaji\Twilio\TwilioServiceProvider::class,
 ```
 Then, add a Facade for more convenient usage. In `app/config/app.php` add the following line to the `aliases` array:
 ```php
-  'Twilio'    => Lakshmajim\Twilio\Facade\Twilio::class,
+  'Twilio'    => Lakshmaji\Twilio\Facade\Twilio::class,
 ```
 Again do composer update
 
@@ -308,7 +308,7 @@ class TwilioTest extends Controller
 namespace App\Exceptions;
 
 use Exception;
-use Lakshmajim\Twilio\Exception\TwilioException;
+use Lakshmaji\Twilio\Exception\TwilioException;
 
 
 /**
@@ -352,9 +352,9 @@ In laravel we can easily handle the errors by using Handler.php (You can use cus
 ## TWILIO TRAIL ACCOUNT USAGE:
 
  - If You are trying to implement SMS functionality with Twilio the you need to verify the list of destination mobile numbers at [Twilio](https://www.twilio.com/user/account/phone-numbers/verified)
-![VERIFIED NUMBERS](https://raw.githubusercontent.com/lakshmajim/images/master/verified_numbers.png)
+![VERIFIED NUMBERS](https://raw.githubusercontent.com/lakshmaji/images/master/verified_numbers.png)
  - Before sending MESSAGE make sure that you have enabled **GEO-PERMISSIONS** at [Twilio](https://www.twilio.com/user/account/settings/international)
-![GEO PERMISSIONS](https://raw.githubusercontent.com/lakshmajim/images/master/geo_permissions.png)
+![GEO PERMISSIONS](https://raw.githubusercontent.com/lakshmaji/images/master/geo_permissions.png)
 
 ***
 

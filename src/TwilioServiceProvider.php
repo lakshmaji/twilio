@@ -1,6 +1,6 @@
 <?php 
 
-namespace Lakshmajim\Twilio;
+namespace Lakshmaji\Twilio;
 
 use Illuminate\Support\ServiceProvider;
 
