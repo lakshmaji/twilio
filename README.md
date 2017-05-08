@@ -1,6 +1,14 @@
 # Laravel - Twilio
 [Wiki on web](http://lakshmaji.github.io/plivo/)
 
+[![Latest Stable Version](https://poser.pugx.org/lakshmajim/twilio/v/stable)](https://packagist.org/packages/lakshmajim/twilio)
+[![Total Downloads](https://poser.pugx.org/lakshmajim/twilio/downloads)](https://packagist.org/packages/lakshmajim/twilio)
+[![Latest Unstable Version](https://poser.pugx.org/lakshmajim/twilio/v/unstable)](https://packagist.org/packages/lakshmajim/twilio)
+[![License](https://poser.pugx.org/lakshmajim/twilio/license)](https://packagist.org/packages/lakshmajim/twilio)
+[![Monthly Downloads](https://poser.pugx.org/lakshmajim/twilio/d/monthly)](https://packagist.org/packages/lakshmajim/twilio)
+[![Daily Downloads](https://poser.pugx.org/lakshmajim/twilio/d/daily)](https://packagist.org/packages/lakshmajim/twilio)
+[![composer.lock](https://poser.pugx.org/lakshmajim/twilio/composerlock)](https://packagist.org/packages/lakshmajim/twilio)
+
 ## INDEX
 
 |Index|Description|
