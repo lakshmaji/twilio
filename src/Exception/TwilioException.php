@@ -8,7 +8,7 @@ namespace Lakshmaji\Twilio\Exception;
 */
 class TwilioException extends \Exception
 {
-	protected $satatusCode = 500;
+    protected $statusCode = 500;
 
 
     public function __construct($message = 'An error occurred', $statusCode = null)
