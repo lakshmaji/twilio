@@ -369,5 +369,3 @@ In laravel we can easily handle the errors by using Handler.php (You can use cus
 ##Licence
 
 [*MIT License (MIT)*](https://opensource.org/licenses/MIT)
-
-@ MUTYALA ANANTHA LAKSHMAJI
